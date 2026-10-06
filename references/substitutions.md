@@ -1,113 +1,74 @@
-# Replacements and technical categories
+# 常见改写方式
 
-This file has three parts:
+先核对含义，再简化句子。
+如果直接替换会改变要求或技术含义，重组句子或保留原文。
+本文件是中文写作建议，不是 ASD-STE100 官方替换表。
 
-- Part 1: replacements for frequent unapproved words
-- Part 2: the 19 categories of technical names
-- Part 3: the 4 categories of technical verbs.
+## 删除冗余表达
 
-## Part 1: Replacements for frequent unapproved words
+| 原表达 | 简明表达 | 注意事项 |
+|---|---|---|
+| 对文件进行修改 | 修改文件 | 保留文件名、权限和修改范围 |
+| 执行安装操作 | 安装 | 保留前置条件 |
+| 予以更换 | 更换 | 保留时机和强制程度 |
+| 在完成之后 | 完成后 | 不改变步骤顺序 |
+| 通过使用扳手来拧紧螺母 | 用扳手拧紧螺母 | 不改变工具规格 |
+| 日志由服务器进行保存 | 服务器保存日志 | 执行者必须有依据 |
+| 若出现连接失败的情况 | 如果连接失败 | 保留失败条件 |
+| 具有对文件进行读取的能力 | 可以读取文件 | 这里表示能力，不是授权 |
 
-The official dictionary gives one or more approved replacements for each unapproved word.
-This table gives frequent replacements. The replacement must keep the meaning of the sentence.
-If a word-for-word replacement changes the meaning, use a different construction (rule 9.1).
+更多逐项表达见 `word-list.md`。
 
-| Unapproved | Approved replacement |
-|---|---|
-| about (approximately) | approximately |
-| acceptable | permitted |
-| accomplish, carry out, conduct, perform | do |
-| activate | start, energize |
-| additional | more |
-| aid (verb) | help |
-| assure, ensure, verify | make sure that |
-| begin, commence, initiate | start |
-| below (a value) | less than |
-| above (a value) | more than |
-| check (verb) | do a check of, examine, make sure that |
-| damage (verb) | cause damage to |
-| depending on | if, as a function of |
-| detect (in a procedure) | find |
-| determine | calculate, find |
-| enough | sufficient |
-| exactly | accurately |
-| extend to | be applicable to |
-| finish | complete, stop |
-| follow (obey) | obey |
-| following (adjective) | that follows |
-| give off | release |
-| goes down | decreases |
-| goes up | increases |
-| help (noun) | aid |
-| however | but |
-| in order to | to |
-| just (only) | only |
-| main | primary |
-| maintain | keep, hold |
-| may, might | can |
-| observe (see) | look at, examine |
-| obtain | get |
-| put out (a fire) | extinguish |
-| prior to | before |
-| require | be necessary, must |
-| see (make sure) | make sure that |
-| shall, should | must |
-| simultaneously | at the same time |
-| technique | method |
-| test (verb) | do a test of |
-| turn (change state) | become, change to |
-| use up | use all of |
-| utilize | use |
-| wear (verb) | put on, use |
-| whilst | while |
-| within | in |
-| would | will, can, or remove it |
+## 拆分动作和说明
 
-NOTE: The official dictionary is the authority for replacements.
-If you have the official specification, use its ALTERNATIVES column.
+改写前：
 
-## Part 2: The 19 categories of technical names (rule 1.5)
+> 关闭电源并拆下盖板，然后对连接器进行检查，因为松动的连接器可能导致通信中断。
 
-You can use a word as a noun or an adjective when it is in one of these categories:
+改写后：
 
-1. Names in the official parts information. Examples: bolt, filter, switch.
-2. Names of vehicles or machines, and locations on them. Examples: aircraft, cabin, wing.
-3. Names of tools and support equipment. Examples: clamp, gauge, torque wrench.
-4. Names of materials, consumables, and unwanted material. Examples: grease, sealant, dust.
-5. Names of facilities and infrastructure. Examples: hangar, dock, building.
-6. Names of systems, components, circuits, and their functions. Examples: pump, latch, standby mode.
-7. Mathematical, scientific, and engineering terms. Examples: diameter, voltage, torque.
-8. Navigation and geographic terms. Examples: altitude, north, France.
-9. Numbers, units of measurement, and time. Examples: 92, kilogram, winter.
-10. Quoted text from placards, labels, signs, and displays. Examples: the EXIT sign, the ON position.
-11. Names of persons, groups, or organizations. Examples: captain, crew, manufacturer, FAA.
-12. Parts of the body. Examples: hand, eyes, skin.
-13. Common personal effects. Examples: clothing, footwear, matches.
-14. Medical terms. Examples: allergy, dizziness, headache.
-15. Names of official documents and parts of documentation. Examples: chapter, figure, Service Bulletin.
-16. Environmental and operational conditions. Examples: rain, ice, turbulence.
-17. Colors. Examples: red, orange, magenta.
-18. Damage terms. Examples: crack, corrosion, dent.
-19. Information technology and telephony terms. Examples: database, cursor, laptop, e-mail, file.
+1. 关闭电源。
+2. 拆下盖板。
+3. 检查连接器。
 
-Rules for technical names:
+松动的连接器可能导致通信中断。
 
-- Do not use a technical name as a verb (rule 1.7).
-- Use the official nomenclature of your project (rule 1.8).
-- Use one name for one item (rule 1.11).
-- Do not use slang or jargon (rule 1.10).
+只有必须同时执行的动作才保留在同一句：
 
-## Part 3: The 4 categories of technical verbs (rule 1.12)
+> 扶住盖板，同时拆下最后一个螺钉。
 
-You can use a verb when it is in one of these categories and no approved verb is sufficient:
+## 明确指代，不编造信息
 
-1. Manufacturing processes. Examples: drill, ream, rivet, weld, solder, anneal, polish, cast.
-2. Computer processes and applications. Examples: click, copy, paste, delete, save, scroll, download, install, reboot.
-3. Description verbs, only in descriptive text. Do not use them in procedures. Examples: detect, emit, radiate, comply with, supersede.
-4. Operational verbs, only in an operational context. Examples: fly, land, taxi, navigate, hover, brief.
+改写前：
 
-Rules for technical verbs:
+> 拔下传感器与控制器之间的电缆，然后检查它是否损坏。
 
-- Use an approved verb if one is available. Write "find", not "detect", in a procedure.
-- Do not use a technical verb as a noun (rule 1.13).
-- The past participle of a technical verb is permitted as an adjective. Example: "the reamed hole".
+如果原文确认检查对象是电缆，可改为：
+
+> 拔下传感器与控制器之间的电缆。
+> 检查电缆是否损坏。
+
+如果无法确定“它”指什么，先指出歧义。
+不要擅自选择传感器、控制器或电缆。
+
+## 保留要求强度和边界
+
+| 原文 | 可以改写为 | 不应改写为 |
+|---|---|---|
+| 建议在升级前备份 | 升级前，建议备份 | 升级前，必须备份 |
+| 故障可能导致数据丢失 | 数据可能因故障而丢失 | 故障会导致数据丢失 |
+| 仅当指示灯熄灭时才能打开盖板 | 指示灯熄灭后，才可以打开盖板 | 打开盖板，再检查指示灯 |
+| 温度不得超过 60 °C | 温度必须小于或等于 60 °C | 温度必须低于 60 °C |
+| 除非已断电，否则不得拆卸 | 只有断电后，才可以拆卸 | 建议断电后拆卸 |
+
+## 保留术语和原文
+
+- 工具、部件、材料和系统名称以项目正式命名为准。
+- API、参数、命令、路径和错误码保持原样。
+- 界面是英文时，写“单击 `Save`”，不要只写“单击保存”。
+- 报错原文保留，例如 `Permission denied`。可以另写“权限不足”。
+- 数值、单位和风险等级不得为了简短而改动。
+- 原文中的推荐不能升级为命令，不确定结果不能改成确定结果。
+
+中文没有必须逐项对应的英文技术名词或技术动词分类。
+只要术语准确、定义清楚、用法一致，就可以使用。

@@ -1,86 +1,103 @@
-# Examples: before and after
+# 改写前后示例
 
-This file shows text before and after the change to STE.
-The examples are our own examples. They are not from the specification.
+以下示例展示如何在保留技术含义的前提下简化中文。
+示例由本项目编写，不是官方规范原文。
 
-## Example 1: Procedural text
+## 示例 1：操作步骤
 
-Before:
+改写前：
 
-> Prior to commencing the installation, it should be ensured that all
-> components have been thoroughly inspected for damage, and any defective
-> parts should be replaced immediately; failure to do so may result in
-> system malfunction.
+> 在开始进行安装操作之前，应当确保所有组件均已完成全面的损坏情况检查，且任何存在缺陷的部件均须立即予以更换；否则可能导致系统故障。
 
-After:
+改写后：
 
-> Before you start the installation, examine all the components for damage.
-> If you find a defective part, replace it immediately.
-> A defective part can cause a system malfunction.
+> 安装前，检查所有组件是否损坏。
+> 如果发现损坏的组件，立即更换。
+> 损坏的组件可能导致系统故障。
 
-The change: imperative commands, no passive voice, no "should", no semicolon, short sentences.
+变化：直接写动作，分开条件和后果，统一对象名称，保留“可能”。
 
-## Example 2: Descriptive text
+## 示例 2：系统说明
 
-Before:
+改写前：
 
-> The fuel system incorporates a number of interconnected subsystems which
-> are constantly being monitored by the engine control unit, which has been
-> designed to automatically compensate for variations occurring in fuel
-> pressure, thereby ensuring optimal engine performance at all times.
+> 燃油系统包含多个相互连接的子系统，这些子系统由发动机控制单元持续进行监控，而该控制单元会在燃油压力发生变化时自动调整流量，从而使发动机性能保持在规定范围内。
 
-After:
+改写后：
 
-> The fuel system has a group of connected subsystems.
-> The engine control unit monitors these subsystems.
-> If the fuel pressure changes, the unit adjusts the flow.
-> Thus, the engine performance stays in the correct range.
+> 燃油系统包含多个相互连接的子系统。
+> 发动机控制单元持续监控这些子系统。
+> 燃油压力变化时，控制单元自动调整流量。
+> 这使发动机性能保持在规定范围内。
 
-The change: one topic in each sentence, active voice, no "-ing" verb forms, specific statements.
+变化：一句一个主题，写明执行者，保留“持续”“自动”等行为信息。
 
-## Example 3: Warning
+## 示例 3：安全警告
 
-Before:
+改写前：
 
-> Extreme caution should be exercised when working in proximity to the
-> high-voltage terminals as serious injury could potentially occur.
+> 不得触摸高压端子，因为高压端子可能会对人员造成严重伤害，甚至导致死亡。
 
-After:
+改写后：
 
-> WARNING: Do not touch the high-voltage terminals.
-> The terminals can cause injury or death to personnel.
+> 警告：不要触摸高压端子。
+> 高压可能导致重伤或死亡。
 
-The change: a command comes first, then the risk. No vague words.
+变化：明确危险标识，先给指令，再说明后果，不改变风险程度。
 
-## Example 4: Vertical list
+## 示例 4：禁止事项列表
 
-Before:
+改写前：
 
-> Ensure that you don't smoke, use open flames, or operate electrical
-> equipment when refueling the aircraft.
+> 为飞机加油时，不要吸烟、使用明火或操作电气设备。
 
-After:
+改写后：
 
-> When you refuel the aircraft:
+> 为飞机加油时：
 >
-> - Do not smoke.
-> - Do not use open flames.
-> - Do not operate electrical equipment.
+> - 不要吸烟。
+> - 不要使用明火。
+> - 不要操作电气设备。
 
-The change: a vertical list, and "not" occurs again in each item.
+变化：每项都重复否定词，避免把后两项误读为要执行的操作。
 
-## Example 5: Software documentation
+## 示例 5：软件文档与原文保护
 
-Before:
+改写前：
 
-> The configuration file should be backed up before making any changes,
-> since incorrect modifications can render the application unusable,
-> requiring a complete reinstallation.
+> 在对 `config.yaml` 进行修改之前，必须先执行备份操作，因为错误的修改可能导致应用程序无法启动。
 
-After:
+改写后：
 
-> Before you change the configuration file, make a backup of the file.
-> An incorrect change can cause a failure of the application.
-> After such a failure, you must install the application again.
+> 修改 `config.yaml` 前，必须备份该文件。
+> 错误的修改可能导致应用程序无法启动。
 
-The change: imperative, condition with a comma, no "-ing" verb forms, one topic in each sentence.
+变化：删除冗余表达，保留路径、强制要求和故障的不确定性。
+没有添加原文未要求的重装、重启或回滚步骤。
+
+## 示例 6：推荐不等于要求
+
+改写前：
+
+> 建议用户在执行升级操作之前对当前配置进行备份，以便在升级失败时恢复原配置。
+
+改写后：
+
+> 升级前，建议备份当前配置。
+> 如果升级失败，可以用备份恢复原配置。
+
+变化：保留建议性质，没有把备份改成强制要求。
+
+## 示例 7：英语翻译为简体中文
+
+原文：
+
+> If the pressure exceeds 10 bar, stop the pump. Do not restart it until the pressure is below 8 bar.
+
+译文：
+
+> 如果压力超过 10 bar，停止泵。
+> 只有压力低于 8 bar 时，才可以重新启动泵。
+
+变化：使用自然中文，保留单位、数值和严格比较关系。
+没有把“低于 8 bar”改成“不超过 8 bar”。

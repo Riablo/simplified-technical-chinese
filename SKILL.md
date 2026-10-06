@@ -1,124 +1,128 @@
 ---
-name: simplified-technical-english
-description: Writes and rewrites text in Simplified Technical English (ASD-STE100), a controlled language for clear technical documentation. Use when the user asks for STE, Simplified Technical English, controlled language, or plain technical writing, and when the user asks to write, rewrite, review, or check technical documentation, procedures, manuals, instructions, warnings, or reports.
-license: MIT for the text of this skill. The word list in references/word-list.md comes from the ASD-STE100 dictionary, which is the property of ASD. Refer to NOTICE.md.
+name: simplified-technical-chinese
+description: "用清楚、简洁、准确的简体中文编写、翻译、改写和审校技术文档。适用于用户要求简明技术中文、简体中文技术写作，或需要处理操作步骤、使用手册、技术说明、安全提示、错误信息和故障报告的场景。"
+license: MIT
 metadata:
-  source-specification: ASD-STE100 Issue 7 (2017-01-25)
+  language: zh-CN
+  upstream: https://github.com/0xpili/simplified-technical-english
+  inspiration: ASD-STE100 Issue 7 (2017)，仅借鉴写作原则，不表示中文合规性
 ---
 
-# Simplified Technical English
+# 简明技术中文
 
-This skill makes you write in Simplified Technical English (STE).
-STE is a controlled language for technical documentation.
-The specification ASD-STE100 gives 53 writing rules and a dictionary of approved words.
-Text in STE is clear to readers who do not know much English.
+用简体中文写技术内容，让读者明确知道要做什么、为什么做、怎样判断结果。
+保留原版简明技术英语的清晰写作目标，按中文语法和技术文档习惯执行。
+本技能不是 ASD-STE100 的官方中文版本。
 
-Obey the rules in this file for all the technical text that you write.
-The rules in this file are the most important rules.
-The full set of rules is in `references/writing-rules.md`.
-The approved words are in `references/word-list.md`.
+## 适用范围
 
-## Scope
+适用于技术文档、操作步骤、手册、说明、安全提示、故障报告和技术答复。
+默认用简体中文输出，包括审校意见和改写说明。
+用户明确指定其他语言或风格时，优先遵守用户要求。
 
-Apply STE to technical output: documentation, procedures, manuals, instructions, reports, error messages, and answers about technical subjects.
+不要擅自改动：
 
-Do not apply STE to:
+- 代码块、命令、标识符、参数、路径、URL 和 API 名称。
+- 引用原文、日志、报错原文、界面标签和产品正式名称。
+- 数值、单位、公式、阈值、先后顺序和必要条件。
+- 要求的强弱、否定范围、概率和风险等级。
 
-- Marketing text or brand text
-- Poems, stories, or conversation
-- Code blocks, identifiers, commands, file paths, and quoted error messages
-- Quoted text and official names of products, parts, and documents.
+不要将本规则强加给文学、品牌文案或日常对话。
+需要翻译引用内容时，保留原文，再单独提供中文解释。
 
-If the user asks for a different style, the request of the user wins.
+## 第一步：识别任务和文体
 
-## Step 1: Classify the text
+先确定用户需要新写、翻译、改写还是审校。
+改写时保留原意。审校时指出问题，并给出可直接使用的改写。
+若用户只需要结果，不要额外输出逐条说明。
 
-Before you write, classify each part of the text:
+区分两类内容：
 
-- **Procedural text** tells the reader to do something. Example: "Remove the four bolts."
-- **Descriptive text** gives information. Example: "The pump supplies fuel to the engine."
+- **操作型**：告诉读者执行动作，例如“拆下 4 个螺栓。”
+- **说明型**：解释结构、行为或原因，例如“燃油泵向发动机供油。”
 
-The two types have different limits. Do not mix the two types in one paragraph.
+操作步骤和背景说明分开写。
+先确认原文事实。信息不足时标明缺失项，不得编造步骤、参数或安全措施。
 
-## Step 2: Obey the verb rules
+## 第二步：明确动作和责任
 
-- Use only these verb forms: infinitive, imperative, simple present, simple past, future with "will", and past participle as an adjective.
-- Do not use the "-ing" form of a verb. Approved "-ing" words are only: mating, missing, remaining, lighting, opening, routing, servicing, during.
-- Do not use a helping verb with a past participle. Write "the operator adjusted the linkage", not "the operator has adjusted the linkage".
-- Use the active voice. Write "a relay connects the circuits", not "the circuits are connected by a relay".
-- In procedures, use the imperative. Write "Set the switch to ON."
-- If there is no agent, use "you" or "we" as the subject.
-- Use only "can", "must", and "will" as helping verbs. Do not use "should", "would", "may", "might", or "shall".
-- A past participle after "is" or "are" shows a condition and is permitted. "The wires are disconnected."
+- 操作步骤直接用动词开头，如“打开”“检查”“保存”“安装”。
+- 指令默认由读者执行，无须每句都加“你”。有其他执行者时，写明执行者。
+- 说明系统行为时，优先写“谁执行什么”，如“服务器保存日志”。
+- 删除“进行安装”“予以更换”等冗余表达，改为“安装”“更换”。
+- 不机械禁止“被”“已”“正在”“了”。这些词可以表达必要的状态和时间。
+- 保留含义差别：“必须”表示要求，“建议”表示推荐，“可以”表示许可或能力，“可能”表示不确定性。
+- 不把“建议”改成“必须”，也不把“可能发生”改成“会发生”。
 
-## Step 3: Obey the sentence rules
+## 第三步：写短句和短段落
 
-- Procedural sentences: maximum 20 words.
-- Descriptive sentences: maximum 25 words.
-- Paragraphs: maximum 6 sentences, and only one topic.
-- Write only one instruction in each sentence. Two actions are permitted only when they occur at the same time.
-- Write only one topic in each sentence.
-- When a condition comes before a command, put a comma after the condition. "If the light comes on, stop the engine."
-- Keep the articles, the subjects, the verbs, and the conjunction "that". Write "make sure that the file exists".
-- Do not use contractions. Write "do not", not "don't".
-- Do not use semicolons. Write two sentences.
-- Use a vertical list for complex text. In a list of commands with "not", write "not" again in each item.
+- 一句只表达一个主题。操作步骤原则上每句只给一条指令。
+- 只有必须同时执行的动作才放在同一句，如“扶住面板，同时拧紧螺钉”。
+- 操作型句子不超过 40 个计数单位，说明型不超过 50 个。
+- 每个汉字计 1 个单位，连续英文单词或数字串计 1 个。标点和空白不计。
+- 行内代码、URL 和引号中的原文各计 1 个单位，但仍要人工确认句子容易理解。
+- 每段只讲一个主题，最多 6 句。复杂内容改用列表。
+- 条件放在动作前，并用逗号分隔：“如果指示灯亮起，停止发动机。”
+- 不用分号串联指令。改成独立句子或列表。
+- 否定列表中的每一项都重复“不要”或“不得”，避免否定范围不清。
+- 不为缩短句子而删除主语、对象、条件、例外或风险说明。
 
-## Step 4: Obey the word rules
+句长阈值是本项目约定，不是 ASD-STE100 的中文标准。
+代码、长标签或原文引述不能拆改时，保留内容并说明例外。
 
-- Use only: approved words from `references/word-list.md`, technical names, and technical verbs.
-- A technical name is the official name of a part, tool, material, system, document, or term of your subject. Examples: "engine", "firewall", "torque wrench", "SKILL.md".
-- Use an approved word only as its given part of speech. "Test" is a noun, not a verb. Write "do a test", not "test the system".
-- Use one name for one item in the full text. Do not change between names for the same item.
-- Write noun clusters of maximum three words. Break long clusters with "of", "on", "in", or "for".
-- Do not make phrasal verbs. Write "extinguish the fire", not "put out the fire".
-- Do not use vague words. Write the specific quantity, name, or action.
-- Use American English spelling.
-- Common replacements are in `references/substitutions.md`.
+## 第四步：统一术语和中文表达
 
-## Step 5: Write safety instructions correctly
+- 使用简体中文和常见技术用语。项目已有术语表时，优先遵守术语表。
+- 同一个对象使用同一个名称。不要交替使用“组件”“模块”“部件”指代同一对象。
+- 不同概念保留不同名称，例如“认证”和“授权”不能合并。
+- 专业术语不必硬译。首次出现时按需要给出中文解释，如“应用程序编程接口（API）”。
+- 避免口号、比喻、冗长名词串和无法验证的表述。
+- “适当”“尽快”“相关人员”等表达需要复核。已知具体条件时写明条件。
+- 原文没有给出数值或责任人时，指出缺失信息，不要自行补造。
+- 不对中文套用英语冠词、时态、词形、词性或 `-ing` 限制。
 
-- Use "WARNING" for a risk of injury or death to persons.
-- Use "CAUTION" for a risk of damage to objects.
-- Start with a simple command or condition. Then give the risk.
-- Example: "WARNING: Do not touch the connector. The connector can have a dangerous voltage."
+阅读 `references/word-list.md` 选择首选表达。
+需要改写冗余句式时，阅读 `references/substitutions.md`。
+词表不是封闭词典，也不禁止表外专业词。
 
-## Step 6: Check your text
+## 第五步：保留安全信息
 
-After you write, check your text. Do these steps:
+- 人身伤亡风险用“警告”，设备、数据或财产损失风险用“注意”。
+- 项目有更具体的法定或行业标识体系时，遵守该体系，保留原风险等级。
+- 先给明确指令或条件，再说明危险和可能后果。
+- 示例：“警告：不要触摸高压端子。高压可能导致重伤或死亡。”
+- 不将警告降为普通备注，不为了简短而删除防护措施。
+- 不凭空添加危险、确定性结论或未经确认的安全步骤。
 
-1. If you can run scripts, run: `python3 scripts/ste_check.py --mode <procedural|descriptive> <file>`.
-2. If you cannot run scripts, do a manual scan of the checklist below.
-3. Correct each error.
-4. Check the text again. Stop only when the text has no errors.
+## 第六步：检查并复核
 
-Manual scan checklist:
+1. 对照原文核对事实、条件、否定、参数、术语和要求强度。
+2. 能运行脚本时，在技能目录运行：
+   `python3 scripts/stc_check.py --mode <procedural|descriptive|mixed> <文件>`。
+   在其他目录执行时，使用脚本的完整路径。
+3. 修正结构错误。逐项复核用词提示，只在保持原意时修改。
+4. 重新检查。必须保留的例外要说明原因，不要为了消除提示而改变技术内容。
+5. 不能运行脚本时，使用下面的人工清单。
 
-- Find semicolons and contractions. Remove them.
-- Find "has", "have", and "had" before a past participle. Use the simple past tense.
-- Find "should", "would", "may", "might", and "shall". Replace them or remove them.
-- Find "-ing" words that are not approved and are not in technical names. Rewrite them.
-- Find passive voice. Make the agent the subject, or use the imperative.
-- Count the words in the longest sentences. Divide sentences that are too long.
-- Count the sentences in each paragraph. Divide paragraphs that have more than 6 sentences.
-- Find words that are not approved and are not technical names. Replace them.
+人工清单：
 
-The check tool cannot find all the errors.
-The tool cannot know if a word has its approved meaning.
-You must also compare your words with `references/word-list.md`.
+- 正文和审校意见是否为简体中文？
+- 每个步骤是否有明确动作、对象和必要条件？
+- 同一对象的名称是否一致，代词是否有明确指代？
+- 是否保留“必须”“建议”“可以”“可能”的差别？
+- 是否保留全部数值、单位、边界、否定和安全要求？
+- 是否存在过长句子、超过 6 句的段落或分号？
+- 是否保留代码、命令、界面标签和引用原文？
+- 是否添加了没有来源的事实或步骤？
 
-## Reference files
+检查器只做启发式检查，不做完整分词、繁简转换或语义验证。
+它会跳过部分 Markdown 内容。人工复核必须覆盖这些内容。
+无报错不等于符合标准。重要技术内容仍需领域人员审核。
 
-- `references/writing-rules.md` — all 53 rules and 4 recommendations, with examples. Read this file when you rewrite a document or when a rule is not clear.
-- `references/word-list.md` — the 869 approved words with their parts of speech and forms.
-- `references/substitutions.md` — replacements for frequent unapproved words, and the categories of technical names and technical verbs.
-- `examples/before-after.md` — examples of text before and after the change to STE.
+## 参考资料
 
-## Basis
-
-The source of this skill is ASD-STE100 Issue 7 (2017).
-ASD releases new issues of the specification.
-You can get the specification free of charge from https://www.asd-ste100.org.
-This skill is not an official ASD document.
-This skill cannot make sure that your text obeys the official specification fully.
-Refer to NOTICE.md for the copyright information.
+- `references/writing-rules.md`：完整中文规则及编号。改写长文档或规则不明确时阅读。
+- `references/word-list.md`：首选表达、待检查表达和术语边界。
+- `references/substitutions.md`：常见替换、重组句子的方法及反例。
+- `examples/before-after.md`：改写示例。
+- `NOTICE.md`：上游来源、版权与非官方声明。

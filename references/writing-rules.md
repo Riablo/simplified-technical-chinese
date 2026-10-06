@@ -1,209 +1,166 @@
-# The STE writing rules
+# 简明技术中文写作规则
 
-This file gives the 53 writing rules of ASD-STE100 (Issue 7) and 4 general recommendations.
-The rules here are not the official text. We wrote them again in STE.
-Get the official specification free of charge from https://www.asd-ste100.org.
+这些规则借鉴简明技术英语的写作原则，按简体中文重新编写。
+规则编号以 `STC-` 开头，只用于本项目，不对应 ASD-STE100 的规则编号。
+中文没有英文的冠词、动词词形和空格分词，不沿用这些限制。
 
-## Contents
+## 1. 用词与术语
 
-- Section 1: Words (rules 1.1 - 1.14)
-- Section 2: Noun clusters (rules 2.1 - 2.3)
-- Section 3: Verbs (rules 3.1 - 3.7)
-- Section 4: Sentences (rules 4.1 - 4.4)
-- Section 5: Procedural writing (rules 5.1 - 5.5)
-- Section 6: Descriptive writing (rules 6.1 - 6.6)
-- Section 7: Safety instructions (rules 7.1 - 7.3)
-- Section 8: Punctuation and word count (rules 8.1 - 8.7)
-- Section 9: Writing practices (rules 9.1 - 9.4)
-- General recommendations (GR-1 - GR-4)
+**STC-1.1：使用简体中文。**
+正文和审校意见默认用简体中文。
+保留代码、引用原文、正式名称和界面标签的原貌。
+不强行翻译 API、HTTP 等通用缩写，按读者需要解释。
 
-In the examples, "Not STE" shows unwanted text. "STE" shows correct text.
+**STC-1.2：优先使用常见、直接的表达。**
+参考 `word-list.md` 和 `substitutions.md`，但不要逐字替换。
+词表之外的词不等于错误。专业用语以项目术语表为准。
 
-## Section 1: Words
+- 冗长：对配置文件进行修改。
+- 简明：修改配置文件。
 
-**Rule 1.1** — You can use only these words: words that the dictionary approves, technical names, and technical verbs.
+**STC-1.3：一个对象使用一个名称。**
+不要为了避免重复而换用近义词。
+不同对象或概念不能因为名称相近就合并。
 
-**Rule 1.2** — Use an approved word only as the part of speech that the dictionary gives.
-- Not STE: "Test the system for leaks." ("test" is approved only as a noun)
-- STE: "Do a leak test of the system."
+- 不清楚：打开控制器。检查该模块的指示灯。
+- 清楚：打开控制器。检查控制器的指示灯。
 
-**Rule 1.3** — Use an approved word only with its approved meaning. The approved meaning is often more narrow than the usual meaning.
-- Not STE: "Follow the safety instructions." ("follow" means only "come after")
-- STE: "Obey the safety instructions."
+**STC-1.4：明确条件、数量和责任。**
+复核“适当”“尽快”“若干”“相关人员”等模糊表达。
+有来源时给出具体信息，无来源时标明缺失项。
+不能为了让句子显得准确而编造数值。
 
-**Rule 1.4** — Use only the approved forms of verbs and adjectives. The word list gives the approved forms.
+- 待确认：等待适当时间后重试。
+- 已知规定等待 30 秒时：等待 30 秒后重试。
+- 等待时间未知时：指出原文没有给出等待时间，保留待确认项。
 
-**Rule 1.5** — You can use a word that is in a technical name category. Refer to `substitutions.md` for the 19 categories.
+## 2. 动作与含义
 
-**Rule 1.6** — You can use an unapproved word only when it is a technical name or a part of a technical name.
-- Permitted: "the base of the triangle" (mathematical term).
-- Not STE: "at the base of the unit". STE: "at the bottom of the unit".
+**STC-2.1：操作指令直接写动作。**
+用“检查阀门”，不用“阀门的检查应被执行”。
+指令默认由读者执行。其他角色执行时，写明角色。
 
-**Rule 1.7** — Do not use a technical name as a verb.
-- Not STE: "Oil the steel surfaces."
-- STE: "Apply oil to the steel surfaces."
+**STC-2.2：优先写明执行者。**
+用“服务器保存日志”，不用“日志由服务器进行保存”。
+被动句不是一律错误。“请求已被拒绝”可以准确描述状态。
+不要为了改成主动句而编造执行者。
 
-**Rule 1.8** — Use the technical names that agree with the official nomenclature of your project or company.
+**STC-2.3：保留要求强度和不确定性。**
+区分以下含义：
 
-**Rule 1.9** — When you must select a technical name, select a name that is short and easy to understand.
+| 表达 | 含义 |
+|---|---|
+| 必须、须 | 强制要求 |
+| 不得、禁止 | 强制禁止 |
+| 建议 | 推荐，不是强制要求 |
+| 可以 | 许可或能力，必要时进一步说明 |
+| 可能 | 不确定的结果 |
+| 会、将 | 对行为或未来结果的确定性描述 |
 
-**Rule 1.10** — Do not use slang or jargon as technical names.
-- Not STE: "Make a sandwich with two washers and the spacer."
-- STE: "Install the spacer between the two washers."
+不将“建议重启”改为“必须重启”。
+不将“可能导致故障”改为“会导致故障”。
+“应”“应当”的含义依文档规范和上下文判断，不能自动替换。
 
-**Rule 1.11** — Use only one technical name for one item. Do not change between names.
+**STC-2.4：用动词表达动作，保留必要状态。**
+用“安装软件”，不用“进行软件的安装操作”。
+“已安装”“正在安装”“安装完成”表示不同状态，不能随意合并。
+中文动词可以直接使用，不受英文批准词性的限制。
 
-**Rule 1.12** — You can use a verb that is in a technical verb category. Use an approved verb if one is available.
-- Not STE: "If you detect broken wires, repair them."
-- STE: "If you find broken wires, repair them."
+## 3. 句子与步骤
 
-**Rule 1.13** — Do not use a technical verb as a noun. The past participle of a technical verb is permitted as an adjective ("the reamed hole").
+**STC-3.1：限制句长。**
+操作型句子最多 40 个计数单位，说明型最多 50 个。
+安全指令按操作型检查。背景说明按说明型检查。
+混合模式对 41～50 个单位提示复核，对超过 50 个单位报错。
 
-**Rule 1.14** — Use American English spelling. Write "color", not "colour".
+计数规则：
 
-## Section 2: Noun clusters
+- 每个汉字计 1 个单位。
+- 连续英文单词、缩写、标识符或数字串各计 1 个单位。
+- 数字的小数点、标识符中的连字符或下划线不拆开计数。
+- 标点和空白不计数。换行不自动结束一个句子。
+- 行内代码、URL 和引号中的原文各计 1 个单位。
+- 括号内的普通说明照常计数。
+- `。！？` 结束句子，不要求后面有空格。英文句号后有空格或位于段尾时也结束句子。
 
-**Rule 2.1** — Write noun clusters of maximum three words. Articles and prepositions do not count. Break long clusters with prepositions.
-- Not STE: "the runway light connection resistance calibration"
-- STE: "the calibration of the resistance of the runway light connection"
+计数不是语言学分词，也不是将英文词数乘以某个系数。
+人工复核仍需检查被排除内容是否过长或难懂。
 
-**Rule 2.2** — When a technical name has more than three words, write it in full one time. Then give a shorter name, or put hyphens between the words that make one unit.
-- Example: "landing-light cutoff-switch power connection".
-- Do not put hyphens between more than three words.
+**STC-3.2：一句只给一条指令。**
+有先后顺序的动作拆成步骤。必须同时执行的动作可以合写。
 
-**Rule 2.3** — Use an article ("the", "a", "an") or a demonstrative adjective ("this", "these") before a noun.
-- Not STE: "Turn shaft assembly."
-- STE: "Turn the shaft assembly."
-- Exception: do not use "the" before a noun with an identifier. Write "circuit breaker 36L7".
+- 拆分：关闭电源。拆下盖板。
+- 同时执行：扶住盖板，同时拆下最后一个螺钉。
 
-## Section 3: Verbs
+**STC-3.3：先给条件，再给动作。**
+条件与动作之间用逗号分隔。
 
-**Rule 3.1** — Use only the verb forms that the word list gives.
+- 清楚：如果指示灯亮起，停止发动机。
+- 不要改成：停止发动机。指示灯可能亮起。
 
-**Rule 3.2** — Use a verb only to make: the infinitive, the imperative, the simple present tense, the simple past tense, the past participle as an adjective, and the future tense. All other tenses are not permitted.
+**STC-3.4：明确否定范围。**
+在禁止事项列表中，每项重复“不要”或“不得”。
+保留“除非”“仅当”“至少”“不超过”等边界词。
 
-**Rule 3.3** — Use the past participle only as an adjective, before a noun or after "to be" or "to become". This shows a condition and is not the passive voice.
-- Permitted: "The wires are disconnected."
+**STC-3.5：准确优先于简短。**
+不能为缩短句子而删除前提、例外、步骤或风险。
+原文不明确时提出待确认项。不要用流畅的改写掩盖缺失信息。
 
-**Rule 3.4** — Do not use helping verbs to make complex verb structures.
-- Not STE: "The operator has adjusted the linkage." STE: "The operator adjusted the linkage."
-- Not STE: "The volume control can be adjusted." STE: "You can adjust the volume control."
-- Not STE: "The temperature must be adjusted." STE: "Adjust the temperature."
+## 4. 段落与组织
 
-**Rule 3.5** — Use the "-ing" form only as a modifier in a technical name ("grinding wheel", "air conditioning system") or in a title.
-- Not STE: "When you are doing this procedure..."
-- STE: "When you do this procedure..."
-- The only approved "-ing" words are: mating, missing, remaining, lighting, opening, routing, servicing, during.
+**STC-4.1：每段一个主题，最多 6 句。**
+先写结论或主题，再写说明。
+Markdown 软换行仍属于同一段。列表项分别检查。
 
-**Rule 3.6** — Use the active voice in procedural text. Use the active voice as much as possible in descriptive text.
-- Make the agent the subject: "A switching relay connects the circuits."
-- Use the imperative: "Continue the test."
-- If there is no agent, use "you" (the reader) or "we" (the writer).
+**STC-4.2：分开步骤和背景。**
+有执行顺序时使用有序列表，没有顺序时使用无序列表。
+复杂条件使用分项说明，不用长句堆叠。
+列表项可以跨行，但跨行不取消句长限制。
 
-**Rule 3.7** — Use an approved verb to show an action. Do not use a noun or an other part of speech.
-- Not STE: "The ohmmeter gives an indication of 450 ohms."
-- STE: "The ohmmeter shows 450 ohms."
+**STC-4.3：标题、表格和备注也要清楚。**
+标题概括主题，表格明确列名和单位。
+备注只补充信息，不能隐藏必做步骤或安全要求。
+脚本跳过标题和表格行，不代表这些内容无需审校。
 
-## Section 4: Sentences
+## 5. 安全提示
 
-**Rule 4.1** — Write short and clear sentences. Give specific information. Write one topic in each sentence.
-- Not STE: "No leaks permitted."
-- STE: "Make sure that there are no leaks."
+**STC-5.1：保留风险等级。**
+一般用“警告”表示人身伤亡风险，用“注意”表示设备、数据或财产损失风险。
+如果项目采用行业或法定标识体系，按该体系处理。
+不得擅自降低风险等级或把危险提示改成备注。
 
-**Rule 4.2** — Keep all the necessary words. Do not use contractions.
-- Keep the subject: "If shims are installed, remove them." Not: "If installed, remove the shims."
-- Keep the verb, the articles, and "that".
-- Write "do not", not "don't".
+**STC-5.2：先给指令或条件，再说明危险。**
 
-**Rule 4.3** — Use a vertical list for complex text. Put a colon at the end of the first line. In a list of commands with "not", write "not" again in each item.
+> 警告：不要触摸高压端子。
+> 高压可能导致重伤或死亡。
 
-**Rule 4.4** — Use connecting words to connect sentences with related topics. Examples: "and", "but", "then", "thus", "as a result".
+风险、后果和防护措施必须有原文或其他可靠依据。
+未经确认，不添加看似合理的安全步骤。
 
-## Section 5: Procedural writing
+## 6. 标点与原文保护
 
-**Rule 5.1** — Write short sentences. Use maximum 20 words in each sentence. This limit also applies to warnings and cautions.
+**STC-6.1：使用清楚的标点。**
+中文正文使用中文标点。不用中文或英文分号串联句子，改用句号或列表。
+命令、代码、URL 和引用原文中的标点保持不变。
 
-**Rule 5.2** — Write only one instruction in each sentence. Two or more actions in one sentence are permitted only when they occur at the same time.
-- Permitted: "Hold the panel in its position and install the fastener."
+**STC-6.2：保留数值、单位和比较关系。**
+“低于 10 V”与“不超过 10 V”不同。
+“30 秒”不能改成“半分钟左右”。
+不要自行换算单位、舍入数值或改变有效位数。
 
-**Rule 5.3** — Write each instruction in the imperative.
-- STE: "Set the switch to ON."
+**STC-6.3：保护可执行内容和精确名称。**
+命令、路径、参数和标识符使用行内代码或代码块。
+引用报错或界面标签时保持原文，需要时另加解释。
+检查器跳过引用块，行内引用原文按一个计数单位处理。
+不要用引号或代码标记包住普通正文来规避检查。
 
-**Rule 5.4** — When a condition or a description comes before a command, put a comma between the two.
-- STE: "When the light comes on, set the switch to NORMAL."
+## 7. 审校
 
-**Rule 5.5** — Write a note only to give information. A note must not give an instruction or a requirement. If the information prevents damage or injury, write a caution or a warning. A note has maximum 25 words.
+**STC-7.1：先核对含义，再处理风格。**
+将结果与原文逐项对照，再运行检查器。
+逐项复核提示，不执行全局盲目替换。
+对必要例外记录原因，重要技术内容交由领域人员确认。
 
-## Section 6: Descriptive writing
-
-**Rule 6.1** — Give information gradually. Write one topic in each sentence.
-
-**Rule 6.2** — Use key words and connecting words to make the structure of the text clear. Use the same key word again in the sentence that follows.
-
-**Rule 6.3** — Write short sentences. Use maximum 25 words in each sentence.
-
-**Rule 6.4** — Use paragraphs to show related information. Start each paragraph with a topic sentence. The other sentences give more data about the topic.
-
-**Rule 6.5** — Write only one topic in each paragraph.
-
-**Rule 6.6** — Write maximum six sentences in each paragraph.
-
-## Section 7: Safety instructions
-
-A warning shows a risk of injury or death to persons. A caution shows a risk of damage to objects.
-
-**Rule 7.1** — Use an applicable word, for example "WARNING" or "CAUTION", to show the level of risk. Do a risk analysis to select the correct word.
-
-**Rule 7.2** — Start a safety instruction with a clear and simple command or condition.
-- STE: "DO NOT SWALLOW THE SOLVENT."
-- STE: "WHILE YOU USE THE SPRAY PAINT, POINT THE SPRAY AWAY FROM YOUR FACE."
-
-**Rule 7.3** — Give an explanation of the risk or of the possible result.
-- STE: "SOLVENTS ARE POISONOUS AND CAN CAUSE INJURY OR DEATH TO PERSONNEL."
-
-## Section 8: Punctuation and word count
-
-**Rule 8.1** — You can use all the standard English punctuation marks, but not the semicolon. Write two sentences.
-
-**Rule 8.2** — Use hyphens to connect words that are closely related. Examples: "low-altitude flight", "quick-release fastener", "O-ring", "de-energize", "forty-seven".
-
-**Rule 8.3** — You can use parentheses for: references ("refer to Figure 1"), item numbers ("the hoses (2) and (12)"), abbreviations ("Liquid Crystal Display (LCD)"), and short explanations.
-
-**Rule 8.4** — In a vertical list, a colon has the same effect on the word count as a full stop. Each item of the list counts as a new sentence.
-
-**Rule 8.5** — Text in parentheses counts as one word in its sentence. The same text also counts separately as its own sentence.
-
-**Rule 8.6** — Each of these counts as one word: a number, a number with its unit, an abbreviation, an acronym, an identifier, quoted text, and the text of a title or placard.
-
-**Rule 8.7** — A hyphenated group counts as one word. "Main-gear-door retraction-winch handle" counts as three words.
-
-## Section 9: Writing practices
-
-**Rule 9.1** — When a word-for-word replacement is not sufficient, use a different construction. Make sure that the new sentence keeps the correct meaning. The primary objective is this: the reader must immediately understand each sentence.
-- Not STE: "The oil level must be visible during the test."
-- STE: "Make sure that you can see the oil level during the test."
-
-**Rule 9.2** — Use each approved word correctly. Read the approved meaning before you use a word.
-- "wear" is a noun. Write "put on protective clothing", not "wear protective clothing".
-- "see" refers only to your eyes. Write "make sure that", not "see if".
-- "turn" means only movement around an axis. Write "the color of the indicator changes to green".
-
-**Rule 9.3** — Do not put two words together to make a phrasal verb.
-- Not STE: "put out the fire". STE: "extinguish the fire".
-- Not STE: "give off fumes". STE: "release fumes".
-
-**Rule 9.4** — Use a consistent style. In procedures, use the same words for the same type of step, and the same name for the same item. In descriptive text, changes of construction are permitted to make the text easy to read.
-
-## General recommendations
-
-**GR-1** — Keep the conjunction "that" after verbs such as "make sure" and "show". Write "Make sure that the valve is open."
-
-**GR-2** — The preposition "with" can make a sentence unclear. Read the sentence again and make the meaning explicit.
-- Not clear: "Seal the opening with the specified tool."
-- Clear: "Use the specified tool to seal the opening."
-
-**GR-3** — If a pronoun can refer to more than one noun, replace the pronoun with the noun.
-- Not clear: "...they can become damaged." Clear: "...the pins can become damaged."
-
-**GR-4** — If "this" can refer to more than one thing, give the full context again.
-- Clear: "If the cover is locked, damage to the probe can occur."
+检查器目前自动检查 `STC-3.1`、`STC-4.1` 和分号规则 `STC-6.1`。
+它对 `STC-1.2` 和 `STC-1.4` 给出启发式提示。
+其他规则、繁简用字和语义必须通过人工或模型审校。
